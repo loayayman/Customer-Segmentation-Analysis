@@ -92,16 +92,16 @@ python analysis.py
 **Visualizations Included**
 - **3D Scatter Plot:** Visualizes 3 PCA components colored by cluster.
 <img width="645" height="658" alt="The Plot of The Clusters" src="https://github.com/user-attachments/assets/29c6a05b-11e3-4504-9950-5825c8e4dbfa" />
----
+
 - **Elbow Plot:** Shows explained variance / clustering inertia to validate cluster count.
 <img width="789" height="516" alt="Elbow Method to Determine the Number of Clusters to be Formed" src="https://github.com/user-attachments/assets/71de50e8-e810-4342-8655-55e721c81449" />
----
+
 - **Cluster Profiling:** Boxplots and swarmplots for `Income` vs. spending per cluster.
 <img width="695" height="516" alt="Number of Deals Purchased" src="https://github.com/user-attachments/assets/6a3dd3ea-8c88-4a78-bc33-626ad535e707" />
----
+
 - **Campaign Acceptance:** Countplots showing which clusters accept promotions (AcceptedCmp1–5).
 <img width="704" height="516" alt="Count of Promotions Accepted" src="https://github.com/user-attachments/assets/2feab4e7-d2df-4c84-96a4-ce6a417fdb98" />
----
+
 
 **Files & Scripts (suggested structure)**
 - `marketing_campaign.csv` — dataset (TSV)
@@ -118,6 +118,7 @@ python analysis.py
 **Contact**
 - **Name:** Loay Ayman
 - **🔗 LinkedIn:** linkedin.com/in/loayayman 
+
 
 
 
