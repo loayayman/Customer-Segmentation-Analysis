@@ -1,10 +1,10 @@
-# Customer Segmentation & Marketing Strategy Analysis**
+# Customer Segmentation & Marketing Strategy Analysis
 
 ## Project Overview:
 - **Description:** This project performs an unsupervised learning analysis on a marketing campaign dataset to segment customers into distinct personas using PCA and Agglomerative Clustering. The goal is to derive actionable marketing strategies to improve campaign efficiency and revenue.
 - **Outcome:** Four customer segments with recommended marketing strategies for each.
 
-## Technologies & Libraries:**
+## Technologies & Libraries:
 - **Language:** `Python 3.x`
 - **Data Manipulation:** `pandas`, `numpy`, `datetime`
 - **Visualization:** `matplotlib`, `seaborn`, `yellowbrick` (Elbow Method)
@@ -68,7 +68,7 @@
 	- **Behavior:** Price-sensitive, deal seekers.
 	- **Strategy:** Promote private-label and bulk packaging, push loyalty programs with immediate savings.
 
-**🚀 Usage**
+**Usage**
 - **Install Dependencies:** Ensure required packages are installed.
 
 ```powershell
@@ -89,26 +89,35 @@ df = pd.read_csv('marketing_campaign.csv', sep='\\t')
 python analysis.py
 ```
 
-**📈 Visualizations Included**
+**Visualizations Included**
 - **3D Scatter Plot:** Visualizes 3 PCA components colored by cluster.
-- **Elbow Plot:** Shows explained variance / clustering inertia to validate cluster count.
-- **Cluster Profiling:** Boxplots and swarmplots for `Income` vs. spending per cluster.
-- **Campaign Acceptance:** Countplots showing which clusters accept promotions (AcceptedCmp1–5).
+- <img width="645" height="658" alt="The Plot of The Clusters" src="https://github.com/user-attachments/assets/29c6a05b-11e3-4504-9950-5825c8e4dbfa" />
 
-**📁 Files & Scripts (suggested structure)**
+- **Elbow Plot:** Shows explained variance / clustering inertia to validate cluster count.
+- <img width="789" height="516" alt="Elbow Method to Determine the Number of Clusters to be Formed" src="https://github.com/user-attachments/assets/71de50e8-e810-4342-8655-55e721c81449" />
+
+- **Cluster Profiling:** Boxplots and swarmplots for `Income` vs. spending per cluster.
+- 	<img width="695" height="516" alt="Number of Deals Purchased" src="https://github.com/user-attachments/assets/6a3dd3ea-8c88-4a78-bc33-626ad535e707" />
+
+- **Campaign Acceptance:** Countplots showing which clusters accept promotions (AcceptedCmp1–5).
+-   <img width="704" height="516" alt="Count of Promotions Accepted" src="https://github.com/user-attachments/assets/2feab4e7-d2df-4c84-96a4-ce6a417fdb98" />
+
+
+**Files & Scripts (suggested structure)**
 - `marketing_campaign.csv` — dataset (TSV)
 - `analysis.py` — main script to run preprocessing, PCA, clustering, and generate plots
 - `utils.py` — (optional) helper functions for feature engineering and plotting
 - `outputs/` — folder to save generated figures and cluster summary CSVs
 
-**➕ Next Steps / Suggestions**
+**Next Steps / Suggestions**
 - Add the `analysis.py` script to this repo if you want me to implement the full pipeline here.
 - I can also generate sample code snippets for each step (cleaning, feature engineering, PCA, clustering, visualization) and commit them to the workspace.
 
 ---
 
-**📬 Contact**
+**Contact**
 - **Name:** Loay Ayman
 - **🔗 LinkedIn:** linkedin.com/in/loayayman 
+
 
 
