@@ -102,22 +102,12 @@ python analysis.py
 - **Campaign Acceptance:** Countplots showing which clusters accept promotions (AcceptedCmp1–5).
 <img width="704" height="516" alt="Count of Promotions Accepted" src="https://github.com/user-attachments/assets/2feab4e7-d2df-4c84-96a4-ce6a417fdb98" />
 
-
-**Files & Scripts (suggested structure)**
-- `marketing_campaign.csv` — dataset (TSV)
-- `analysis.py` — main script to run preprocessing, PCA, clustering, and generate plots
-- `utils.py` — (optional) helper functions for feature engineering and plotting
-- `outputs/` — folder to save generated figures and cluster summary CSVs
-
-**Next Steps / Suggestions**
-- Add the `analysis.py` script to this repo if you want me to implement the full pipeline here.
-- I can also generate sample code snippets for each step (cleaning, feature engineering, PCA, clustering, visualization) and commit them to the workspace.
-
 ---
 
 **Contact**
 - **Name:** Loay Ayman
 - **🔗 LinkedIn:** linkedin.com/in/loayayman 
+
 
 
 
