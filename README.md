@@ -48,22 +48,22 @@
 	 - **Agglomerative Clustering:** Final model to segment customers into 4 clusters.
 
 ## Cluster Profiles & Strategic Insights
-- **Cluster 0 — The Established Family** 🧑‍👩‍👧‍👦
+- **Cluster 0 — The Established Family** 
 	- **Profile:** Older parents, typically with teenagers. Medium family size (2–4).
 	- **Behavior:** Seek convenience and value.
 	- **Strategy:** Value packs, multi-buy discounts, ready-made meal kits. Use a mix of traditional (flyers) and digital marketing.
 
-- **Cluster 1 — The New Parents** 👶📱
+- **Cluster 1 — The New Parents** 
 	- **Profile:** Younger demographic, small families (usually one young child).
 	- **Behavior:** Child-focused purchases.
 	- **Strategy:** Promote fresh produce and organic baby products. Targeted social media and app-based personalized coupons.
 
-- **Cluster 2 — The Elite Spenders** 🥂🍖
+- **Cluster 2 — The Elite Spenders** 
 	- **Profile:** High income, no children (singles/couples).
 	- **Behavior:** Highest spenders on wine and meat.
 	- **Strategy:** Promote premium/gourmet items, emphasize exclusivity and quality, create curated "Gourmet Bundle" experiences.
 
-- **Cluster 3 — The Budget Large Family** 🛒💰
+- **Cluster 3 — The Budget Large Family** 
 	- **Profile:** Older parents, large families (up to 5), lower income.
 	- **Behavior:** Price-sensitive, deal seekers.
 	- **Strategy:** Promote private-label and bulk packaging, push loyalty programs with immediate savings.
@@ -92,7 +92,7 @@ python analysis.py
 **Visualizations Included**
 - **3D Scatter Plot:** Visualizes 3 PCA components colored by cluster.
 <img width="645" height="658" alt="The Plot of The Clusters" src="https://github.com/user-attachments/assets/29c6a05b-11e3-4504-9950-5825c8e4dbfa" />
-
+--
 - **Elbow Plot:** Shows explained variance / clustering inertia to validate cluster count.
 <img width="789" height="516" alt="Elbow Method to Determine the Number of Clusters to be Formed" src="https://github.com/user-attachments/assets/71de50e8-e810-4342-8655-55e721c81449" />
 
@@ -118,6 +118,7 @@ python analysis.py
 **Contact**
 - **Name:** Loay Ayman
 - **🔗 LinkedIn:** linkedin.com/in/loayayman 
+
 
 
 
