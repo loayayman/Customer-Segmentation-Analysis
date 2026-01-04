@@ -68,19 +68,16 @@ The analysis identified **4 distinct customer segments**:
 
 ## How to Run
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/yourusername/customer-segmentation.git](https://github.com/yourusername/customer-segmentation.git)
-    ```
-2.  **Install dependencies:**
+1.  **Install dependencies:**
     ```bash
     pip install pandas numpy matplotlib seaborn scikit-learn yellowbrick
     ```
-3.  **Run the script:**
+2.  **Run the script:**
     ```bash
-    python analysis.py
+    python Unsupervised_Learning_Project.ipynb
     ```
 
 ## Contact
 * **Name:** Loay Ayman
 * **LinkedIn:** [linkedin.com/in/loayayman](https://linkedin.com/in/loayayman)
+
