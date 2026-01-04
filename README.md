@@ -1,118 +1,86 @@
-# Customer Segmentation & Marketing Strategy Analysis
+# Customer Segmentation & Marketing Strategy Analysis 
 
-## Project Overview:
-- **Description:** This project performs an unsupervised learning analysis on a marketing campaign dataset to segment customers into distinct personas using PCA and Agglomerative Clustering. The goal is to derive actionable marketing strategies to improve campaign efficiency and revenue.
-- **Outcome:** Four customer segments with recommended marketing strategies for each.
+## Project Overview
+This project performs an **Unsupervised Learning** analysis on a marketing campaign dataset to segment customers into distinct personas using **PCA** and **Agglomerative Clustering**. 
 
-## Technologies & Libraries:
-- **Language:** `Python 3.x`
-- **Data Manipulation:** `pandas`, `numpy`, `datetime`
-- **Visualization:** `matplotlib`, `seaborn`, `yellowbrick` (Elbow Method)
-- **Machine Learning:** `scikit-learn`
-	- **Preprocessing:** `LabelEncoder`, `StandardScaler`
-	- **Decomposition:** `PCA`
-	- **Clustering:** `KMeans` (for evaluation), `AgglomerativeClustering` (final model)
+The main objective is to derive actionable marketing strategies for each segment to improve campaign efficiency, customer retention, and revenue.
 
-##  Dataset:
-- **File:** `marketing_campaign.csv`
-- **Format:** Tab-separated values (TSV) — use `sep="\t"` when loading.
-- **Size:** 2,240 records, 29 features
-- **Key Features:**
-	- **Demographics:** `Year_Birth`, `Education`, `Marital_Status`, `Income`
-	- **Household:** `Kidhome`, `Teenhome`
-	- **Spending:** `MntWines`, `MntMeatProducts`, `MntGoldProds`, etc.
-	- **Engagement:** `NumWebVisitsMonth`, `NumDealsPurchases`, `AcceptedCmp1-5`
+## Technologies & Libraries
+* **Language:** Python 3.x
+* **Data Manipulation:** `pandas`, `numpy`, `datetime`
+* **Visualization:** `matplotlib`, `seaborn`, `yellowbrick`
+* **Machine Learning:** `scikit-learn`
+    * Preprocessing: `LabelEncoder`, `StandardScaler`
+    * Decomposition: `PCA`
+    * Clustering: `AgglomerativeClustering`
 
-## Methodology:
-1. **Data Cleaning**
-	 - **Null Handling:** Dropped rows with missing `Income` (24 rows removed).
-	 - **Outlier Removal:** Removed unrealistic values (e.g., `Age > 90`, `Income > 600000`).
-	 - **Date Parsing:** Converted `Dt_Customer` to `datetime` objects.
+## Dataset
+* **Source:** `marketing_campaign.csv`
+* **Size:** 2,240 records, 29 features.
+* **Key Attributes:** Demographics, Household composition, Spending habits, and Campaign engagement.
 
-2. **Feature Engineering**
-	 - **Age:** Derived from `Year_Birth`.
-	 - **Spent:** Total sum across all product spending features.
-	 - **Living_With:** Simplified `Marital_Status` into `Partner` or `Alone`.
-	 - **Family_Size:** `Living_With` + children (`Kidhome + Teenhome`).
-	 - **Is_Parent:** Binary flag (1 if children > 0).
-	 - **Education:** Regrouped into `Undergraduate`, `Graduate`, `Postgraduate`.
-	 - **Customer_For:** Number of days since the customer enrolled.
+## Methodology
 
-3. **Preprocessing & Dimensionality Reduction**
-	 - **Encoding:** Label-encode categorical variables.
-	 - **Scaling:** Normalize numerical features using `StandardScaler`.
-	 - **PCA:** Reduce to 3 components to improve clustering performance and allow 3D visualization.
+1.  **Data Cleaning:** Handled missing values in `Income`, removed outliers (Age > 90, Income > 600k), and parsed dates.
+2.  **Feature Engineering:** Created new features like `Age`, `Spent` (Total Spend), `Family_Size`, `Is_Parent`, and `Customer_For` (Loyalty duration).
+3.  **Preprocessing:** Applied `LabelEncoder` for categorical data and `StandardScaler` for normalization.
+4.  **Dimensionality Reduction:** Used **PCA (Principal Component Analysis)** to reduce dimensions to 3 components for better clustering and visualization.
+5.  **Clustering:** * Determined optimal clusters ($k=4$) using the **Elbow Method**.
+    * Applied **Agglomerative Clustering**.
 
-4. **Clustering Model**
-	 - **Elbow Method:** Used (via `yellowbrick`) to evaluate cluster counts and determine optimal `k=4`.
-	 - **Agglomerative Clustering:** Final model to segment customers into 4 clusters.
+## Cluster Profiling & Insights
 
-## Cluster Profiles & Strategic Insights
-- **Cluster 0 — The Established Family** 
-	- **Profile:** Older parents, typically with teenagers. Medium family size (2–4).
-	- **Behavior:** Seek convenience and value.
-	- **Strategy:** Value packs, multi-buy discounts, ready-made meal kits. Use a mix of traditional (flyers) and digital marketing.
+The analysis identified **4 distinct customer segments**:
 
-- **Cluster 1 — The New Parents** 
-	- **Profile:** Younger demographic, small families (usually one young child).
-	- **Behavior:** Child-focused purchases.
-	- **Strategy:** Promote fresh produce and organic baby products. Targeted social media and app-based personalized coupons.
+### Cluster 0: The Established Family
+* **Profile:** Older parents, typically with teenagers. Medium family size (2–4).
+* **Behavior:** Seek convenience and value.
+* **Strategy:** Offer family value packs, multi-buy discounts, and ready-made meal kits.
 
-- **Cluster 2 — The Elite Spenders** 
-	- **Profile:** High income, no children (singles/couples).
-	- **Behavior:** Highest spenders on wine and meat.
-	- **Strategy:** Promote premium/gourmet items, emphasize exclusivity and quality, create curated "Gourmet Bundle" experiences.
+### Cluster 1: The New Parents
+* **Profile:** Younger demographic, small families (usually one young child).
+* **Behavior:** Child-focused purchases, health-conscious.
+* **Strategy:** Promote fresh produce and organic baby products via social media and app-based coupons.
 
-- **Cluster 3 — The Budget Large Family** 
-	- **Profile:** Older parents, large families (up to 5), lower income.
-	- **Behavior:** Price-sensitive, deal seekers.
-	- **Strategy:** Promote private-label and bulk packaging, push loyalty programs with immediate savings.
+### Cluster 2: The Elite Spenders
+* **Profile:** High income, no children (singles/couples).
+* **Behavior:** Highest spenders on wine and meat.
+* **Strategy:** Focus on premium/gourmet items, exclusivity, and quality.
 
-**Usage**
-- **Install Dependencies:** Ensure required packages are installed.
+### Cluster 3: The Budget Large Family
+* **Profile:** Older parents, large families (up to 5), lower income.
+* **Behavior:** Price-sensitive, deal seekers.
+* **Strategy:** Promote private-label brands, bulk packaging, and aggressive loyalty rewards.
 
-```powershell
-pip install pandas numpy matplotlib seaborn scikit-learn yellowbrick
-```
+## Visualizations
 
-- **Load Data:** Example to read the TSV dataset.
+### 3D Cluster Visualization (PCA)
+<img src="https://github.com/user-attachments/assets/29c6a05b-11e3-4504-9950-5825c8e4dbfa" alt="3D Clusters" width="700"/>
 
-```python
-import pandas as pd
+### Elbow Method
+<img src="https://github.com/user-attachments/assets/71de50e8-e810-4342-8655-55e721c81449" alt="Elbow Method" width="700"/>
 
-df = pd.read_csv('marketing_campaign.csv', sep='\\t')
-```
+### Income vs. Spending per Cluster
+<img src="https://github.com/user-attachments/assets/5dcb4f19-40fc-44b0-8021-d68c5e9c9518" alt="Income vs Spending" width="700"/>
 
-- **Run Analysis:** Execute your script (e.g., `analysis.py`) that performs cleaning, feature engineering, PCA, clustering, and visualization. Example:
+### Promotion Acceptance
+<img src="https://github.com/user-attachments/assets/2feab4e7-d2df-4c84-96a4-ce6a417fdb98" alt="Promotion Acceptance" width="700"/>
 
-```powershell
-python analysis.py
-```
+## How to Run
 
-**Visualizations Included**
-- **3D Scatter Plot:** Visualizes 3 PCA components colored by cluster.
-<img width="645" height="658" alt="The Plot of The Clusters" src="https://github.com/user-attachments/assets/29c6a05b-11e3-4504-9950-5825c8e4dbfa" />
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/yourusername/customer-segmentation.git](https://github.com/yourusername/customer-segmentation.git)
+    ```
+2.  **Install dependencies:**
+    ```bash
+    pip install pandas numpy matplotlib seaborn scikit-learn yellowbrick
+    ```
+3.  **Run the script:**
+    ```bash
+    python analysis.py
+    ```
 
-- **Elbow Plot:** Shows explained variance / clustering inertia to validate cluster count.
-<img width="789" height="516" alt="Elbow Method to Determine the Number of Clusters to be Formed" src="https://github.com/user-attachments/assets/71de50e8-e810-4342-8655-55e721c81449" />
-
-- **Cluster Profiling:** Boxplots and swarmplots for `Income` vs. spending per cluster.
-<img width="712" height="496" alt="48e35d50-a60d-46cc-b1ab-c8343eef674f" src="https://github.com/user-attachments/assets/5dcb4f19-40fc-44b0-8021-d68c5e9c9518" />
-
-- **Campaign Acceptance:** Countplots showing which clusters accept promotions (AcceptedCmp1–5).
-<img width="704" height="516" alt="Count of Promotions Accepted" src="https://github.com/user-attachments/assets/2feab4e7-d2df-4c84-96a4-ce6a417fdb98" />
-
----
-
-**Contact**
-- **Name:** Loay Ayman
-- **🔗 LinkedIn:** linkedin.com/in/loayayman 
-
-
-
-
-
-
-
-
-
+## Contact
+* **Name:** Loay Ayman
+* **LinkedIn:** [linkedin.com/in/loayayman](https://linkedin.com/in/loayayman)
